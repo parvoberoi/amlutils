@@ -7,7 +7,6 @@ from utils.sorting import natural_sort
 class TestNaturalSort(unittest.TestCase):
 
     def test_atoi(self):
-        import pdb; pdb.set_trace()
         string = "101"
         result = natural_sort.atoi(string)
         self.assertEqual(result, int(string))
