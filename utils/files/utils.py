@@ -21,6 +21,8 @@ def list_contents_of_folder(folder_path: str, extension: typing.Optional[str] = 
     """
     if extension:
         folder_path = os.path.join(folder_path, "*{}".format(extension))
+    else:
+        folder_path = os.path.join(folder_path, "*")
     logging.info("Looking for all files matching: {}".format(folder_path))
     return glob.glob(folder_path)
 

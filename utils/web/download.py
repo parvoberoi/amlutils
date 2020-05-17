@@ -5,7 +5,7 @@ import typing
 
 from multiprocessing import Pool
 
-import file_utils
+import utils.file_utils as file_utils
 
 
 class DownloadDataInfo:

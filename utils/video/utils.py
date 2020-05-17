@@ -6,7 +6,7 @@ import typing
 
 from multiprocessing.pool import ThreadPool
 
-import file_utils
+from files import utils as file_utils
 
 
 class ExtractionInfo:
@@ -35,6 +35,7 @@ class ExtractionInfo:
         self.video_path = video_path
         self.extraction_folder = extraction_folder
         self.sample_rate = sample_rate
+        self.frame_suffix = frame_suffix
 
 
 def extract_frames_from_video(extraction_info: ExtractionInfo) -> None:
@@ -52,13 +53,15 @@ def extract_frames_from_video(extraction_info: ExtractionInfo) -> None:
     """
     video_path = extraction_info.video_path
     file_name = os.path.basename(video_path)
+    file_utils.make_folder_if_not_exists(extraction_info.extraction_folder)
     base_output_file_name = os.path.join(extraction_info.extraction_folder, file_name).rsplit(".", 1)[0]
-    output_file_name = base_output_file_name + extraction_info.frame_suffix
+    base_output_file_name = base_output_file_name + extraction_info.frame_suffix
 
     if extraction_info.sample_rate <= 0:
         raise ValueError("Sample Rate has to be greater 0")
 
-    if os.path.exists(output_file_name.format(0)):
+    if os.path.exists(base_output_file_name.format(0)):
+        # if the first extracted frame for a video exists consider it processed
         logging.info("Video({}) already processed".format(video_path))
         return
 
@@ -74,7 +77,7 @@ def extract_frames_from_video(extraction_info: ExtractionInfo) -> None:
             logging.info("Processed video file: {}".format(video_path))
             return
 
-        cv2.imwrite(output_file_name.format(count), image)
+        cv2.imwrite(base_output_file_name.format(count), image)
         count = count + 1
 
 
@@ -134,6 +137,11 @@ def write_to_video(
     height: typing.Optional[int], optional
         expected height of video. If is 0 or None height will be taken from first image of list, by default None
     """
+    if len(cv2_image_list[0].shape) != 3:
+        logging.error("Frames to be written need to be a 3 dimesional numpy array found {}".format(
+            len(cv2_image_list[0].shape))
+        )
+        return
     img_height, img_width = cv2_image_list[0].shape[:2]
     if not width:
         width = img_width
@@ -142,7 +150,7 @@ def write_to_video(
 
     out = cv2.VideoWriter(
         output_video_file_path,
-        cv2.VideoWriter(*"MP4V"),
+        cv2.VideoWriter_fourcc(*"MP4V"),
         int(video_fps),
         (width, height),
     )
