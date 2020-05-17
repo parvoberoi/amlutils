@@ -5,7 +5,7 @@ import shutil
 import typing
 
 
-def list_contents_of_folder(folder_path: str, extension: typing.Optional[str] = None) -> typing.List[str]:
+def full_path_for_contents(folder_path: str, extension: typing.Optional[str] = None) -> typing.List[str]:
     """Returns full paths of all files in the folder, does not traverse sub folders
 
     Parameters
@@ -39,7 +39,7 @@ def delete_folder(folder_path: str, empty: typing.Optional[bool] = True) -> None
         if True will not delete a folder that has contents, by default True
     """
     if empty:
-        files = list_contents_of_folder(folder_path)
+        files = full_path_for_contents(folder_path)
         if len(files) > 0:
             logging.warning("Folder({}) is non empty, has {} files. NOT DELETING".format(folder_path, len(files)))
             return
@@ -69,31 +69,3 @@ def make_folder_if_not_exists(folder_path: str, make_new: typing.Optional[bool] 
         delete_folder(folder_path, empty=False)
 
     os.makedirs(folder_path)
-
-
-def move_files(file_paths: typing.List[str], folder_path: str) -> None:
-    """move files specified by their full paths to a destination folder
-
-    Parameters
-    ----------
-    file_paths : typing.List[str]
-        List of full paths of files that need to be moved
-    folder_path : str
-        Full path of destination folder where the files need to be moved
-    """
-    for fp in file_paths:
-        shutil.move(fp, folder_path)
-
-
-def copy_files(file_paths: typing.List[str], folder_path: str) -> None:
-    """copy files specified by their full paths to a destination folder
-
-    Parameters
-    ----------
-    file_paths : typing.List[str]
-        List of full paths of files that need to be copied
-    folder_path : str
-        Full path of destination folder where the files need to be copied
-    """
-    for fp in file_paths:
-        shutil.copy(fp, folder_path)
