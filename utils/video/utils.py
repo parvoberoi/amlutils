@@ -6,8 +6,7 @@ import typing
 
 from multiprocessing.pool import ThreadPool
 
-from files import utils as file_utils
-
+from utils.files_and_folders import folder_utils
 
 class ExtractionInfo:
     def __init__(
@@ -53,7 +52,7 @@ def extract_frames_from_video(extraction_info: ExtractionInfo) -> None:
     """
     video_path = extraction_info.video_path
     file_name = os.path.basename(video_path)
-    file_utils.make_folder_if_not_exists(extraction_info.extraction_folder)
+    folder_utils.make_folder_if_not_exists(extraction_info.extraction_folder)
     base_output_file_name = os.path.join(extraction_info.extraction_folder, file_name).rsplit(".", 1)[0]
     base_output_file_name = base_output_file_name + extraction_info.frame_suffix
 
@@ -104,8 +103,8 @@ def extract_frames_from_videos(
     num_processes : typing.Optional[int], optional
         [description], by default 8
     """
-    video_paths = file_utils.list_contents_of_folder(videos_folder, videos_extension)
-    file_utils.make_folder_if_not_exists(extraction_folder)
+    video_paths = folder_utils.full_path_for_contents(videos_folder, videos_extension)
+    folder_utils.make_folder_if_not_exists(extraction_folder)
 
     extraction_info_list = [
         ExtractionInfo(video_path, extraction_folder, sample_rate, frame_suffix) for video_path in video_paths
