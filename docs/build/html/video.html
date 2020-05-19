@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>video package &#8212; Python Utils 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="video-package">
+<h1>video package<a class="headerlink" href="#video-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-video.utils">
+<span id="video-utils-module"></span><h2>video.utils module<a class="headerlink" href="#module-video.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="video.utils.ExtractionInfo">
+<em class="property">class </em><code class="descclassname">video.utils.</code><code class="descname">ExtractionInfo</code><span class="sig-paren">(</span><em>video_path: str</em>, <em>extraction_folder: str</em>, <em>sample_rate: typing.Union[int</em>, <em>NoneType] = 1</em>, <em>frame_suffix: typing.Union[str</em>, <em>NoneType] = '_frame_{}_sec.jpg'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#video.utils.ExtractionInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="video.utils.extract_frames_from_video">
+<code class="descclassname">video.utils.</code><code class="descname">extract_frames_from_video</code><span class="sig-paren">(</span><em>extraction_info: video.utils.ExtractionInfo</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#video.utils.extract_frames_from_video" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract frames from video as specified in extraction_info</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extraction_info</strong> (<a class="reference internal" href="#video.utils.ExtractionInfo" title="video.utils.ExtractionInfo"><em>ExtractionInfo</em></a>) – extraction info controlling, extraction metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – extraction_info.sample_rate has to be greater than 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="video.utils.extract_frames_from_videos">
+<code class="descclassname">video.utils.</code><code class="descname">extract_frames_from_videos</code><span class="sig-paren">(</span><em>videos_folder: str</em>, <em>extraction_folder: str</em>, <em>videos_extension: typing.Union[str</em>, <em>NoneType] = '.mp4'</em>, <em>sample_rate: typing.Union[int</em>, <em>NoneType] = 1</em>, <em>num_processes: typing.Union[int</em>, <em>NoneType] = 8</em>, <em>frame_suffix: typing.Union[str</em>, <em>NoneType] = '_frame_{}_sec.jpg'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#video.utils.extract_frames_from_videos" title="Permalink to this definition">¶</a></dt>
+<dd><p>[summary]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>videos_folder</strong> (<em>str</em>) – [description]</li>
+<li><strong>extraction_folder</strong> (<em>str</em>) – [description]</li>
+<li><strong>videos_extension</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – [description], by default “.mp4”</li>
+<li><strong>sample_rate</strong> (<em>typing.Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – [description], by default 1</li>
+<li><strong>num_processes</strong> (<em>typing.Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – [description], by default 8</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="video.utils.write_to_video">
+<code class="descclassname">video.utils.</code><code class="descname">write_to_video</code><span class="sig-paren">(</span><em>cv2_image_list: typing.List[&lt;sphinx.ext.autodoc._MockObject object at 0x7fbc6173f400&gt;], output_video_file_path: str, video_fps: int, width: typing.Union[int, NoneType] = None, height: typing.Union[int, NoneType] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#video.utils.write_to_video" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a video out of a list of images represented as np.ndarray,</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cv2_image_list</strong> (<em>typing.List</em><em>[</em><em>np.ndarray</em><em>]</em>) – List of images represented as np.ndarray generally obtained from cv2.imread()</li>
+<li><strong>output_video_file_path</strong> (<em>str</em>) – full path to where video should be stored</li>
+<li><strong>video_fps</strong> (<em>int</em>) – number of images to use per second of video from the list</li>
+<li><strong>width</strong> (<em>typing.Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – expected width of video. If is 0 or None width will be taken from first image of list</li>
+<li><strong>height</strong> (<em>typing.Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – expected height of video. If is 0 or None height will be taken from first image of list, by default None</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-video">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-video" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Parv Oberoi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/video.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
