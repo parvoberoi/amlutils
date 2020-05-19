@@ -82,6 +82,7 @@ def parse_csv_file(
     column_id: typing.Optional[int] = None,
     delimiter: typing.Optional[str] = ",",
     quotechar: typing.Optional[str] = "|",
+    encoding: typing.Optional[str] = "utf-8",
 ) -> typing.Union[typing.List[typing.List[typing.Any]], typing.List[typing.Any]]:
     """parse a csv file and return data
 
@@ -98,6 +99,8 @@ def parse_csv_file(
         what is the delimiter used to indicate columns in csv file, by default ","
     quotechar : typing.Optional[str], optional
         what is the quotechar used to escape delimiter, by default "|"
+    encoding: typing.Optional[str], optional
+        what encoding mode should be used for opening the file, by default "utf-8"
 
     Returns
     -------
@@ -106,7 +109,7 @@ def parse_csv_file(
         OR returns a List of data indicating only one column as specified by column_id
     """
     data = []
-    with open(file_path, "r") as csv_file:
+    with open(file_path, "r", encoding=encoding) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=delimiter, quotechar=quotechar)
         for row in csv_reader:
             if has_header:

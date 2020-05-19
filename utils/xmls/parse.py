@@ -37,6 +37,13 @@ class Annotation:
 
 class XMLParser:
     def __init__(self, xml_path: str) -> None:
+        """Helper class for parsing object detection xml files
+
+        Parameters
+        ----------
+        xml_path : str
+            path to xml file that needs to be parsed
+        """
         self.xml_path = xml_path
         self.xml_tree = ET.parse(xml_path)
         self.xml_root = self.xml_tree.getroot()
