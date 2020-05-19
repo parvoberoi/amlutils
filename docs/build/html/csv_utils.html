@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>csv_utils module &#8212; Python Utils 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-csv_utils">
+<span id="csv-utils-module"></span><h1>csv_utils module<a class="headerlink" href="#module-csv_utils" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="csv_utils.parse_csv_file">
+<code class="descclassname">csv_utils.</code><code class="descname">parse_csv_file</code><span class="sig-paren">(</span><em>file_path: str</em>, <em>has_header: typing.Union[bool</em>, <em>NoneType] = False</em>, <em>column_id: typing.Union[int</em>, <em>NoneType] = None</em>, <em>delimiter: typing.Union[str</em>, <em>NoneType] = '</em>, <em>'</em>, <em>quotechar: typing.Union[str</em>, <em>NoneType] = '|'</em>, <em>encoding: typing.Union[str</em>, <em>NoneType] = 'utf-8'</em><span class="sig-paren">)</span> &#x2192; typing.Union[typing.List[typing.List[typing.Any]], typing.List[typing.Any]]<a class="headerlink" href="#csv_utils.parse_csv_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse a csv file and return data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_path</strong> (<em>str</em>) – full path to csv file that needs to be parsed</li>
+<li><strong>has_header</strong> (<em>typing.Optional</em><em>[</em><em>bool</em><em>]</em><em>, </em><em>optional</em>) – whether the first row of the file are headers
+If true the first row will be skipped in returned data, by default False</li>
+<li><strong>column_id</strong> (<em>typing.Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – if only need data of a specific column from the csv file, by default None</li>
+<li><strong>delimiter</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – what is the delimiter used to indicate columns in csv file, by default “,”</li>
+<li><strong>quotechar</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – what is the quotechar used to escape delimiter, by default “|”</li>
+<li><strong>encoding</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – what encoding mode should be used for opening the file, by default “utf-8”</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">either returns a List of Lists of the data from the csv file,
+OR returns a List of data indicating only one column as specified by column_id</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">typing.Union[typing.List[typing.List[typing.Any]], typing.List[typing.Any]]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csv_utils.store_dictionary_to_csv">
+<code class="descclassname">csv_utils.</code><code class="descname">store_dictionary_to_csv</code><span class="sig-paren">(</span><em>file_path: str, data: typing.List[typing.Dict[str, typing.Any]], headers: typing.Union[typing.List[str], NoneType] = None, delimiter: typing.Union[str, NoneType] = ',', quotechar: typing.Union[str, NoneType] = '|'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#csv_utils.store_dictionary_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores a list of dictionaries to a csv file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<em>str</em>) – full path to csv file to be created</li>
+<li><strong>data</strong> (<em>typing.List</em><em>[</em><em>typing.Dict</em><em>[</em><em>str</em><em>, </em><em>typing.Any</em><em>]</em><em>]</em>) – list of dictionaries, where each key of the dictionary indicates columns</li>
+<li><strong>headers</strong> (<em>typing.Optional</em><em>[</em><em>typing.List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – if provided will use only these keys from dictionaries to create csv
+if None will use all keys from first dictionary in the list, by default None</li>
+<li><strong>delimiter</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – delimiter to be used for creating columns, by default “,”</li>
+<li><strong>quotechar</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – character to be used to escape the delimiter if its a part of the data, by default “|”</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csv_utils.store_list_to_csv">
+<code class="descclassname">csv_utils.</code><code class="descname">store_list_to_csv</code><span class="sig-paren">(</span><em>file_path: str, data: typing.List[typing.List[typing.Any]], delimiter: typing.Union[str, NoneType] = ',', quotechar: typing.Union[str, NoneType] = '|'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#csv_utils.store_list_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores a list of data to a csv file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<em>str</em>) – full path to csv file to be created</li>
+<li><strong>data</strong> (<em>typing.List</em><em>[</em><em>typing.List</em><em>[</em><em>typing.Any</em><em>]</em><em>]</em>) – List of lists that needs to be stored as csv</li>
+<li><strong>delimiter</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – delimiter to be used for creating columns, by default “,”</li>
+<li><strong>quotechar</strong> (<em>typing.Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – how to quote the delimiter if it is part of data, by default “|”</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Parv Oberoi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/csv_utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

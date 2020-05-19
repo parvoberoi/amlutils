@@ -1,0 +1,294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>xmls package &#8212; Python Utils 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="xmls-package">
+<h1>xmls package<a class="headerlink" href="#xmls-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-xmls.create">
+<span id="xmls-create-module"></span><h2>xmls.create module<a class="headerlink" href="#module-xmls.create" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="xmls.create.get_xml_name_for_image">
+<code class="descclassname">xmls.create.</code><code class="descname">get_xml_name_for_image</code><span class="sig-paren">(</span><em>image_identifier: str</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#xmls.create.get_xml_name_for_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate the xml name for the given image identifier(full_path or only file_name)
+useful for generating OD annotations file name for the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image_identifier</strong> (<em>str</em>) – can be the full image path or just the image name for which the xml name needs to be generated</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The xml file name only ending in .xml extension</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="xmls.create.store_od_annotations_to_xml">
+<code class="descclassname">xmls.create.</code><code class="descname">store_od_annotations_to_xml</code><span class="sig-paren">(</span><em>image_file_path: str, xml_file_path: str, label_to_box_annotations: typing.Dict[str, typing.List[typing.List[float]]], normalized_coordinates: typing.Union[bool, NoneType] = False</em><span class="sig-paren">)</span><a class="headerlink" href="#xmls.create.store_od_annotations_to_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>given the Object Detection bounding box coordinates and labels, generate
+a XML file for Object Detection Training</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image_file_path</strong> (<em>str</em>) – full path to image for which the xml annotations need to be stored</li>
+<li><strong>xml_file_path</strong> (<em>str</em>) – full path to where new xml file should be created</li>
+<li><strong>class_to_box_annotations</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>(</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>)</em><em>]</em><em>]</em>) – A dictionary of containing the object_label and coordinates of bounding box
+coordinate format [xmin, ymin, xmax, ymax]</li>
+<li><strong>normalized_coordinates</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em><em>, </em><em>default=False</em>) – whether the bounding box coordinates are normalized or not, if normalized they
+will be multiplied by the width and height of the image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-xmls.parse">
+<span id="xmls-parse-module"></span><h2>xmls.parse module<a class="headerlink" href="#module-xmls.parse" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions for parsing Pascal VOC XML Formats</p>
+<dl class="class">
+<dt id="xmls.parse.Annotation">
+<em class="property">class </em><code class="descclassname">xmls.parse.</code><code class="descname">Annotation</code><span class="sig-paren">(</span><em>field_to_value: typing.Dict[str, typing.Any]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#xmls.parse.Annotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="xmls.parse.BoundingBoxXMLFields">
+<em class="property">class </em><code class="descclassname">xmls.parse.</code><code class="descname">BoundingBoxXMLFields</code><a class="headerlink" href="#xmls.parse.BoundingBoxXMLFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="xmls.parse.BoundingBoxXMLFields.XMAX">
+<code class="descname">XMAX</code><em class="property"> = 2</em><a class="headerlink" href="#xmls.parse.BoundingBoxXMLFields.XMAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.BoundingBoxXMLFields.XMIN">
+<code class="descname">XMIN</code><em class="property"> = 0</em><a class="headerlink" href="#xmls.parse.BoundingBoxXMLFields.XMIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.BoundingBoxXMLFields.YMAX">
+<code class="descname">YMAX</code><em class="property"> = 3</em><a class="headerlink" href="#xmls.parse.BoundingBoxXMLFields.YMAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.BoundingBoxXMLFields.YMIN">
+<code class="descname">YMIN</code><em class="property"> = 1</em><a class="headerlink" href="#xmls.parse.BoundingBoxXMLFields.YMIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="xmls.parse.ObjectXMLFields">
+<em class="property">class </em><code class="descclassname">xmls.parse.</code><code class="descname">ObjectXMLFields</code><a class="headerlink" href="#xmls.parse.ObjectXMLFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="xmls.parse.ObjectXMLFields.BOUNDING_BOX">
+<code class="descname">BOUNDING_BOX</code><em class="property"> = 'bndbox'</em><a class="headerlink" href="#xmls.parse.ObjectXMLFields.BOUNDING_BOX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.ObjectXMLFields.DIFFICULT">
+<code class="descname">DIFFICULT</code><em class="property"> = 'difficult'</em><a class="headerlink" href="#xmls.parse.ObjectXMLFields.DIFFICULT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.ObjectXMLFields.NAME">
+<code class="descname">NAME</code><em class="property"> = 'name'</em><a class="headerlink" href="#xmls.parse.ObjectXMLFields.NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.ObjectXMLFields.POSE">
+<code class="descname">POSE</code><em class="property"> = 'pose'</em><a class="headerlink" href="#xmls.parse.ObjectXMLFields.POSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.ObjectXMLFields.TRUNCATED">
+<code class="descname">TRUNCATED</code><em class="property"> = 'truncated'</em><a class="headerlink" href="#xmls.parse.ObjectXMLFields.TRUNCATED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="xmls.parse.TopLevelXMLFields">
+<em class="property">class </em><code class="descclassname">xmls.parse.</code><code class="descname">TopLevelXMLFields</code><a class="headerlink" href="#xmls.parse.TopLevelXMLFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="xmls.parse.TopLevelXMLFields.FILE_NAME">
+<code class="descname">FILE_NAME</code><em class="property"> = 'filename'</em><a class="headerlink" href="#xmls.parse.TopLevelXMLFields.FILE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.TopLevelXMLFields.FOLDER">
+<code class="descname">FOLDER</code><em class="property"> = 'folder'</em><a class="headerlink" href="#xmls.parse.TopLevelXMLFields.FOLDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.TopLevelXMLFields.OBJECT">
+<code class="descname">OBJECT</code><em class="property"> = 'object'</em><a class="headerlink" href="#xmls.parse.TopLevelXMLFields.OBJECT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.TopLevelXMLFields.PATH">
+<code class="descname">PATH</code><em class="property"> = 'path'</em><a class="headerlink" href="#xmls.parse.TopLevelXMLFields.PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xmls.parse.TopLevelXMLFields.SIZE">
+<code class="descname">SIZE</code><em class="property"> = 'size'</em><a class="headerlink" href="#xmls.parse.TopLevelXMLFields.SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="xmls.parse.XMLParser">
+<em class="property">class </em><code class="descclassname">xmls.parse.</code><code class="descname">XMLParser</code><span class="sig-paren">(</span><em>xml_path: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#xmls.parse.XMLParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="xmls.parse.XMLParser.get_file_name">
+<code class="descname">get_file_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#xmls.parse.XMLParser.get_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>get image file name corresponding to xml file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">image file name associated with this xml</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – incorrectly formatted xml file with multiple image file names</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xmls.parse.XMLParser.get_object_labels">
+<code class="descname">get_object_labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Set[str]<a class="headerlink" href="#xmls.parse.XMLParser.get_object_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>get set of all unique labels present in the xml file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">set of unique labels from xml file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">typing.Set[str]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xmls.parse.XMLParser.get_object_labels_to_bounding_boxes">
+<code class="descname">get_object_labels_to_bounding_boxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Dict[str, typing.List[typing.List[float]]]<a class="headerlink" href="#xmls.parse.XMLParser.get_object_labels_to_bounding_boxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of labels to list of bounding boxes for that label</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary of label and list of its bounding boxes from the xml</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">typing.Dict[str, typing.List[typing.List[float]]]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-xmls">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-xmls" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Parv Oberoi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/xmls.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
