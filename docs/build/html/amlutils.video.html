@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>amlutils.video package &#8212; Applied Machine Learning Utils 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="amlutils-video-package">
+<h1>amlutils.video package<a class="headerlink" href="#amlutils-video-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-amlutils.video.utils">
+<span id="amlutils-video-utils-module"></span><h2>amlutils.video.utils module<a class="headerlink" href="#module-amlutils.video.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="amlutils.video.utils.ExtractionInfo">
+<em class="property">class </em><code class="descclassname">amlutils.video.utils.</code><code class="descname">ExtractionInfo</code><span class="sig-paren">(</span><em>video_path: str</em>, <em>extraction_folder: str</em>, <em>sample_rate: typing.Union[int</em>, <em>NoneType] = 1</em>, <em>frame_suffix: typing.Union[str</em>, <em>NoneType] = '_frame_{}_sec.jpg'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.video.utils.ExtractionInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.video.utils.extract_frames_from_video">
+<code class="descclassname">amlutils.video.utils.</code><code class="descname">extract_frames_from_video</code><span class="sig-paren">(</span><em>extraction_info: amlutils.video.utils.ExtractionInfo</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.video.utils.extract_frames_from_video" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract frames from video as specified in extraction_info</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extraction_info</strong> (<a class="reference internal" href="#amlutils.video.utils.ExtractionInfo" title="amlutils.video.utils.ExtractionInfo"><em>ExtractionInfo</em></a>) – extraction info controlling, extraction metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code></a> – extraction_info.sample_rate has to be greater than 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.video.utils.extract_frames_from_videos">
+<code class="descclassname">amlutils.video.utils.</code><code class="descname">extract_frames_from_videos</code><span class="sig-paren">(</span><em>videos_folder: str</em>, <em>extraction_folder: str</em>, <em>videos_extension: typing.Union[str</em>, <em>NoneType] = '.mp4'</em>, <em>sample_rate: typing.Union[int</em>, <em>NoneType] = 1</em>, <em>num_processes: typing.Union[int</em>, <em>NoneType] = 8</em>, <em>frame_suffix: typing.Union[str</em>, <em>NoneType] = '_frame_{}_sec.jpg'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.video.utils.extract_frames_from_videos" title="Permalink to this definition">¶</a></dt>
+<dd><p>[summary]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>videos_folder</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – [description]</li>
+<li><strong>extraction_folder</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – [description]</li>
+<li><strong>videos_extension</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – [description], by default “.mp4”</li>
+<li><strong>sample_rate</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – [description], by default 1</li>
+<li><strong>num_processes</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – [description], by default 8</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.video.utils.write_to_video">
+<code class="descclassname">amlutils.video.utils.</code><code class="descname">write_to_video</code><span class="sig-paren">(</span><em>cv2_image_list: typing.List[&lt;sphinx.ext.autodoc._MockObject object at 0x7fce1ae676d8&gt;], output_video_file_path: str, video_fps: int, width: typing.Union[int, NoneType] = None, height: typing.Union[int, NoneType] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.video.utils.write_to_video" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a video out of a list of images represented as np.ndarray,</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cv2_image_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><em>np.ndarray</em><em>]</em>) – List of images represented as np.ndarray generally obtained from cv2.imread()</li>
+<li><strong>output_video_file_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to where video should be stored</li>
+<li><strong>video_fps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – number of images to use per second of video from the list</li>
+<li><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – expected width of video. If is 0 or None width will be taken from first image of list</li>
+<li><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – expected height of video. If is 0 or None height will be taken from first image of list, by default None</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-amlutils.video">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-amlutils.video" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Parv Oberoi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/amlutils.video.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

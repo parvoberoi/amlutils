@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Applied Machine Learning Utils documentation build configuration file, created by
-# sphinx-quickstart on Wed May 20 11:34:14 2020.
+# Python Utils documentation build configuration file, created by
+# sphinx-quickstart on Tue May 19 19:26:21 2020.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -19,8 +19,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, os.path.abspath('../../amlutils/'))
+sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../../utils/'))
 
 
 # -- General configuration ------------------------------------------------
@@ -33,11 +33,10 @@ sys.path.insert(0, os.path.abspath('../../amlutils/'))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.githubpages',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.napoleon',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -53,7 +52,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Applied Machine Learning Utils'
+project = 'Python Utils'
 copyright = '2020, Parv Oberoi'
 author = 'Parv Oberoi'
 
@@ -119,7 +118,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'AppliedMachineLearningUtilsdoc'
+htmlhelp_basename = 'PythonUtilsdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -146,7 +145,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'AppliedMachineLearningUtils.tex', 'Applied Machine Learning Utils Documentation',
+    (master_doc, 'PythonUtils.tex', 'Python Utils Documentation',
      'Parv Oberoi', 'manual'),
 ]
 
@@ -156,7 +155,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'appliedmachinelearningutils', 'Applied Machine Learning Utils Documentation',
+    (master_doc, 'pythonutils', 'Python Utils Documentation',
      [author], 1)
 ]
 
@@ -167,36 +166,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'AppliedMachineLearningUtils', 'Applied Machine Learning Utils Documentation',
-     author, 'AppliedMachineLearningUtils', 'One line description of project.',
+    (master_doc, 'PythonUtils', 'Python Utils Documentation',
+     author, 'PythonUtils', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
-# -- Options for Epub output ----------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = project
-epub_author = author
-epub_publisher = author
-epub_copyright = copyright
-
-# The unique identifier of the text. This can be a ISBN number
-# or the project homepage.
-#
-# epub_identifier = ''
-
-# A unique identification for the text.
-#
-# epub_uid = ''
-
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ['search.html']
-
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
 
 
 autodoc_mock_imports = ['cv2', 'numpy']

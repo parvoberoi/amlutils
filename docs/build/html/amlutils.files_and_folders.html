@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>amlutils.files_and_folders package &#8212; Applied Machine Learning Utils 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="amlutils-files-and-folders-package">
+<h1>amlutils.files_and_folders package<a class="headerlink" href="#amlutils-files-and-folders-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-amlutils.files_and_folders.file_utils">
+<span id="amlutils-files-and-folders-file-utils-module"></span><h2>amlutils.files_and_folders.file_utils module<a class="headerlink" href="#module-amlutils.files_and_folders.file_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="amlutils.files_and_folders.file_utils.copy_files">
+<code class="descclassname">amlutils.files_and_folders.file_utils.</code><code class="descname">copy_files</code><span class="sig-paren">(</span><em>file_paths: typing.List[str], folder_path: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.files_and_folders.file_utils.copy_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>copy files specified by their full paths to a destination folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_paths</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em>) – List of full paths of files that need to be copied</li>
+<li><strong>folder_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Full path of destination folder where the files need to be copied</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.files_and_folders.file_utils.move_files">
+<code class="descclassname">amlutils.files_and_folders.file_utils.</code><code class="descname">move_files</code><span class="sig-paren">(</span><em>file_paths: typing.List[str], folder_path: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.files_and_folders.file_utils.move_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>move files specified by their full paths to a destination folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_paths</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em>) – List of full paths of files that need to be moved</li>
+<li><strong>folder_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Full path of destination folder where the files need to be moved</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-amlutils.files_and_folders.folder_utils">
+<span id="amlutils-files-and-folders-folder-utils-module"></span><h2>amlutils.files_and_folders.folder_utils module<a class="headerlink" href="#module-amlutils.files_and_folders.folder_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="amlutils.files_and_folders.folder_utils.delete_folder">
+<code class="descclassname">amlutils.files_and_folders.folder_utils.</code><code class="descname">delete_folder</code><span class="sig-paren">(</span><em>folder_path: str</em>, <em>empty: typing.Union[bool</em>, <em>NoneType] = True</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.files_and_folders.folder_utils.delete_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete specified folder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>folder_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to folder that needs to be deleted</li>
+<li><strong>empty</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>]</em><em>, </em><em>optional</em>) – if False, delete folder even if its not empty
+if True will not delete a folder that has contents, by default True</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.files_and_folders.folder_utils.full_path_for_contents">
+<code class="descclassname">amlutils.files_and_folders.folder_utils.</code><code class="descname">full_path_for_contents</code><span class="sig-paren">(</span><em>folder_path: str</em>, <em>extension: typing.Union[str</em>, <em>NoneType] = None</em><span class="sig-paren">)</span> &#x2192; typing.List[str]<a class="headerlink" href="#amlutils.files_and_folders.folder_utils.full_path_for_contents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns full paths of all files in the folder, does not traverse sub folders</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>folder_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to folder whose contents are needed</li>
+<li><strong>extension</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – if specified only return files ending in extension from folder, by default None</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List of full path of files contained in the folder</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.files_and_folders.folder_utils.make_folder_if_not_exists">
+<code class="descclassname">amlutils.files_and_folders.folder_utils.</code><code class="descname">make_folder_if_not_exists</code><span class="sig-paren">(</span><em>folder_path: str</em>, <em>make_new: typing.Union[bool</em>, <em>NoneType] = False</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.files_and_folders.folder_utils.make_folder_if_not_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make folder and sub folders for the given folder path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>folder_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path of folder that needs to be created</li>
+<li><strong>make_new</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>]</em><em>, </em><em>optional</em>) – if True, delete the existing folder and all its contents and create new folder, by default False</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-amlutils.files_and_folders">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-amlutils.files_and_folders" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Parv Oberoi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/amlutils.files_and_folders.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
