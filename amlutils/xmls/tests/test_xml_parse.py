@@ -28,7 +28,7 @@ class TestXMLCreateParse(unittest.TestCase):
             ])
         return unnormalized_bounding_boxes
 
-    @patch('utils.xmls.create.cv2.imread')
+    @patch('amlutils.xmls.create.cv2.imread')
     def test_create_xml(self, mock_imread):
         label_to_box_annotations = {
             "label_{}".format(i): self._get_bounding_boxes(3)
