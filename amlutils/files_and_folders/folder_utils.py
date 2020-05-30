@@ -5,22 +5,33 @@ import shutil
 import typing
 
 
-def full_path_for_contents(folder_path: str, extension: typing.Optional[str] = None) -> typing.List[str]:
+def full_path_for_contents(
+    folder_path: str,
+    suffix: typing.Optional[str] = None,
+    prefix: typing.Optional[str] = None,
+) -> typing.List[str]:
     """Returns full paths of all files in the folder, does not traverse sub folders
 
     Parameters
     ----------
     folder_path: str
         full path to folder whose contents are needed
-    extension: typing.Optional[str], optional
-        if specified only return files ending in extension from folder, by default None
+    suffix: typing.Optional[str], optional
+        if specified only return files ending in suffix from folder, by default None
+    prefix: typing.Optional[str], optional
+        if specified only return files beginning with prefix from folder, by default None
 
     Returns
     -------
     List of full path of files contained in the folder
     """
-    if extension:
-        folder_path = os.path.join(folder_path, "*{}".format(extension))
+    glob_string = ""
+    if suffix:
+        glob_string = "*{}".format(suffix)
+    if prefix:
+        glob_string = "{}*{}".format(prefix, glob_string)
+    if glob_string:
+        folder_path = os.path.join(folder_path, glob_string)
     else:
         folder_path = os.path.join(folder_path, "*")
     logging.info("Looking for all files matching: {}".format(folder_path))

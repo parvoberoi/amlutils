@@ -38,12 +38,24 @@ class TestFileAndFolderUtils(unittest.TestCase):
         # check list folder with different extensions
         num_txt_files = 5
         num_csv_files = 3
+        num_jpg_files = 2
+        for i in range(num_jpg_files):
+            self._create_file(os.path.join(folder_to_create, "{}.jpg".format(i)), "jpeg file")
         for i in range(num_txt_files):
-            self._create_file(os.path.join(folder_to_create, "{}.txt".format(i)), "text file")
+            self._create_file(os.path.join(folder_to_create, "prefix_{}.txt".format(i)), "text file")
         for i in range(num_csv_files):
-            self._create_file(os.path.join(folder_to_create, "{}.csv".format(i)), "csv file")
-        self.assertEqual(len(folder_utils.full_path_for_contents(folder_to_create, ".txt")), num_txt_files)
-        self.assertEqual(len(folder_utils.full_path_for_contents(folder_to_create, ".csv")), num_csv_files)
+            self._create_file(os.path.join(folder_to_create, "prefix_{}.csv".format(i)), "csv file")
+
+        self.assertEqual(len(folder_utils.full_path_for_contents(folder_to_create, suffix=".txt")), num_txt_files)
+        self.assertEqual(len(folder_utils.full_path_for_contents(folder_to_create, suffix=".csv")), num_csv_files)
+        self.assertEqual(
+            len(folder_utils.full_path_for_contents(folder_to_create, prefix="prefix_")),
+            num_txt_files + num_csv_files,
+        )
+        self.assertEqual(
+            len(folder_utils.full_path_for_contents(folder_to_create, suffix=".csv", prefix="prefix_")),
+            num_csv_files,
+        )
 
     def test_file_utils(self):
         temp_folder = tempfile.mkdtemp()
