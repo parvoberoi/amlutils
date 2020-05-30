@@ -104,7 +104,7 @@ def extract_frames_from_videos(
     num_processes : typing.Optional[int], optional
         [description], by default 8
     """
-    video_paths = folder_utils.full_path_for_contents(videos_folder, videos_extension)
+    video_paths = folder_utils.full_path_for_contents(videos_folder, suffix=videos_extension)
     folder_utils.make_folder_if_not_exists(extraction_folder)
 
     extraction_info_list = [
