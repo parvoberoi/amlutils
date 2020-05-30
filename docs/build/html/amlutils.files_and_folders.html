@@ -104,7 +104,7 @@ if True will not delete a folder that has contents, by default True</li>
 
 <dl class="function">
 <dt id="amlutils.files_and_folders.folder_utils.full_path_for_contents">
-<code class="descclassname">amlutils.files_and_folders.folder_utils.</code><code class="descname">full_path_for_contents</code><span class="sig-paren">(</span><em>folder_path: str</em>, <em>extension: typing.Union[str</em>, <em>NoneType] = None</em><span class="sig-paren">)</span> &#x2192; typing.List[str]<a class="headerlink" href="#amlutils.files_and_folders.folder_utils.full_path_for_contents" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">amlutils.files_and_folders.folder_utils.</code><code class="descname">full_path_for_contents</code><span class="sig-paren">(</span><em>folder_path: str</em>, <em>suffix: typing.Union[str</em>, <em>NoneType] = None</em>, <em>prefix: typing.Union[str</em>, <em>NoneType] = None</em><span class="sig-paren">)</span> &#x2192; typing.List[str]<a class="headerlink" href="#amlutils.files_and_folders.folder_utils.full_path_for_contents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns full paths of all files in the folder, does not traverse sub folders</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -112,7 +112,8 @@ if True will not delete a folder that has contents, by default True</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>folder_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to folder whose contents are needed</li>
-<li><strong>extension</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – if specified only return files ending in extension from folder, by default None</li>
+<li><strong>suffix</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – if specified only return files ending in suffix from folder, by default None</li>
+<li><strong>prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – if specified only return files beginning with prefix from folder, by default None</li>
 </ul>
 </td>
 </tr>
