@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="amlutils",
-    version="1.7",
+    version="1.8",
     author="Parv Oberoi",
     author_email="amlutils@gmail.com",
     description="A collection of useful methods and utilities for Machine Learning Projects",
