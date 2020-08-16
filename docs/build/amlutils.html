@@ -1,0 +1,257 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>amlutils package &#8212; Applied Machine Learning Utils 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="amlutils-package">
+<h1>amlutils package<a class="headerlink" href="#amlutils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="amlutils.files_and_folders.html">amlutils.files_and_folders package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.files_and_folders.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.files_and_folders.html#module-amlutils.files_and_folders.file_utils">amlutils.files_and_folders.file_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.files_and_folders.html#module-amlutils.files_and_folders.folder_utils">amlutils.files_and_folders.folder_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.files_and_folders.html#module-amlutils.files_and_folders">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="amlutils.sorting.html">amlutils.sorting package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.sorting.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.sorting.html#module-amlutils.sorting.natural_sort">amlutils.sorting.natural_sort module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.sorting.html#module-amlutils.sorting">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="amlutils.video.html">amlutils.video package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.video.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.video.html#module-amlutils.video.utils">amlutils.video.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.video.html#module-amlutils.video">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="amlutils.web.html">amlutils.web package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.web.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.web.html#module-amlutils.web.download">amlutils.web.download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.web.html#module-amlutils.web">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="amlutils.xmls.html">amlutils.xmls package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.xmls.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.xmls.html#module-amlutils.xmls.create">amlutils.xmls.create module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.xmls.html#module-amlutils.xmls.parse">amlutils.xmls.parse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amlutils.xmls.html#module-amlutils.xmls">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-amlutils.csv_utils">
+<span id="amlutils-csv-utils-module"></span><h2>amlutils.csv_utils module<a class="headerlink" href="#module-amlutils.csv_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="amlutils.csv_utils.parse_csv_file">
+<code class="descclassname">amlutils.csv_utils.</code><code class="descname">parse_csv_file</code><span class="sig-paren">(</span><em>file_path: str</em>, <em>has_header: typing.Union[bool</em>, <em>NoneType] = False</em>, <em>column_id: typing.Union[int</em>, <em>NoneType] = None</em>, <em>delimiter: typing.Union[str</em>, <em>NoneType] = '</em>, <em>'</em>, <em>quotechar: typing.Union[str</em>, <em>NoneType] = '|'</em>, <em>encoding: typing.Union[str</em>, <em>NoneType] = 'utf-8'</em><span class="sig-paren">)</span> &#x2192; typing.Union[typing.List[typing.List[typing.Any]], typing.List[typing.Any]]<a class="headerlink" href="#amlutils.csv_utils.parse_csv_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse a csv file and return data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to csv file that needs to be parsed</li>
+<li><strong>has_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>]</em><em>, </em><em>optional</em>) – whether the first row of the file are headers
+If true the first row will be skipped in returned data, by default False</li>
+<li><strong>column_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – if only need data of a specific column from the csv file, by default None</li>
+<li><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – what is the delimiter used to indicate columns in csv file, by default “,”</li>
+<li><strong>quotechar</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – what is the quotechar used to escape delimiter, by default “|”</li>
+<li><strong>encoding</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – what encoding mode should be used for opening the file, by default “utf-8”</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">either returns a List of Lists of the data from the csv file,
+OR returns a List of data indicating only one column as specified by column_id</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.8)">typing.Union</a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)">typing.List</a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)">typing.List</a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)">typing.Any</a>]], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)">typing.List</a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)">typing.Any</a>]]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.csv_utils.store_dictionary_to_csv">
+<code class="descclassname">amlutils.csv_utils.</code><code class="descname">store_dictionary_to_csv</code><span class="sig-paren">(</span><em>file_path: str, data: typing.List[typing.Dict[str, typing.Any]], headers: typing.Union[typing.List[str], NoneType] = None, delimiter: typing.Union[str, NoneType] = ',', quotechar: typing.Union[str, NoneType] = '|'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.csv_utils.store_dictionary_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores a list of dictionaries to a csv file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to csv file to be created</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.8)"><em>typing.Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><em>typing.Any</em></a><em>]</em><em>]</em>) – list of dictionaries, where each key of the dictionary indicates columns</li>
+<li><strong>headers</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>]</em><em>, </em><em>optional</em>) – if provided will use only these keys from dictionaries to create csv
+if None will use all keys from first dictionary in the list, by default None</li>
+<li><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – delimiter to be used for creating columns, by default “,”</li>
+<li><strong>quotechar</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – character to be used to escape the delimiter if its a part of the data, by default “|”</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.csv_utils.store_list_to_csv">
+<code class="descclassname">amlutils.csv_utils.</code><code class="descname">store_list_to_csv</code><span class="sig-paren">(</span><em>file_path: str, data: typing.List[typing.List[typing.Any]], delimiter: typing.Union[str, NoneType] = ',', quotechar: typing.Union[str, NoneType] = '|'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.csv_utils.store_list_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores a list of data to a csv file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to csv file to be created</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><em>typing.List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><em>typing.Any</em></a><em>]</em><em>]</em>) – List of lists that needs to be stored as csv</li>
+<li><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – delimiter to be used for creating columns, by default “,”</li>
+<li><strong>quotechar</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.8)"><em>typing.Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>, </em><em>optional</em>) – how to quote the delimiter if it is part of data, by default “|”</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-amlutils.json_utils">
+<span id="amlutils-json-utils-module"></span><h2>amlutils.json_utils module<a class="headerlink" href="#module-amlutils.json_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="amlutils.json_utils.JsonEncoder">
+<em class="property">class </em><code class="descclassname">amlutils.json_utils.</code><code class="descname">JsonEncoder</code><span class="sig-paren">(</span><em>*</em>, <em>skipkeys=False</em>, <em>ensure_ascii=True</em>, <em>check_circular=True</em>, <em>allow_nan=True</em>, <em>sort_keys=False</em>, <em>indent=None</em>, <em>separators=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#amlutils.json_utils.JsonEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">json.encoder.JSONEncoder</span></code></p>
+<dl class="method">
+<dt id="amlutils.json_utils.JsonEncoder.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#amlutils.json_utils.JsonEncoder.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.json_utils.parse_json_file">
+<code class="descclassname">amlutils.json_utils.</code><code class="descname">parse_json_file</code><span class="sig-paren">(</span><em>file_path: str</em><span class="sig-paren">)</span><a class="headerlink" href="#amlutils.json_utils.parse_json_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>utility method to read a json file and return json object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to json file that needs to be parsed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">json object parsed from the file</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.8)">type</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="amlutils.json_utils.store_json_data">
+<code class="descclassname">amlutils.json_utils.</code><code class="descname">store_json_data</code><span class="sig-paren">(</span><em>file_path: str</em>, <em>json_data</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#amlutils.json_utils.store_json_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>utility method to store data as json to a file with pre-defined
+encoders for numpy objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – full path to json file where the data needs to be stored</li>
+<li><strong>json_data</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.8)"><em>type</em></a><em>]</em>) – data that needs to be encoded as json</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-amlutils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-amlutils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Parv Oberoi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/amlutils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
