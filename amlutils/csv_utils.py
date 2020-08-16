@@ -1,6 +1,10 @@
 import csv
 import logging
+import sys
 import typing
+
+
+csv.field_size_limit(sys.maxsize)
 
 
 def store_list_to_csv(
