@@ -1,11 +1,15 @@
+import pkg_resources
 import setuptools
+
+pkg_resources.require(['pip >= 19.3.1'])
+
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="amlutils",
-    version="1.5",
+    version="1.7",
     author="Parv Oberoi",
     author_email="amlutils@gmail.com",
     description="A collection of useful methods and utilities for Machine Learning Projects",
