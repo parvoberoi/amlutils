@@ -1,4 +1,5 @@
 from amlutils import (
+    collections,
     csv_utils,
     files_and_folders,
     json_utils,
@@ -8,4 +9,4 @@ from amlutils import (
     xmls,
 )
 
-__version__ = "1.5"
+__version__ = "1.8"
