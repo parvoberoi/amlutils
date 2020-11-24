@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="amlutils",
-    version="1.8",
+    version="2.0.0",
     author="Parv Oberoi",
     author_email="amlutils@gmail.com",
     description="A collection of useful methods and utilities for Machine Learning Projects",
@@ -33,6 +33,7 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=[
+        "Pillow>=8.0.1",
         "numpy>=1.18.3",
         "opencv-python>=4.2.0.34",
         "requests>=2.23.0",
