@@ -22,7 +22,7 @@ jupyter-core==4.6.3
 keyring==21.2.1
 mccabe==0.6.1
 more-itertools==8.2.0
-numpy==1.18.3
+numpy==1.22.0
 opencv-python==4.2.0.34
 packaging==20.4
 parso==0.7.0
